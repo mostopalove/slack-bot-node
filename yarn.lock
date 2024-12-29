@@ -815,6 +815,11 @@ side-channel@^1.0.6:
     side-channel-map "^1.0.1"
     side-channel-weakmap "^1.0.2"
 
+slack-block-builder@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/slack-block-builder/-/slack-block-builder-2.8.0.tgz#895eea549b6aa8bd1a7a70dd6af8641ee7ec8dcf"
+  integrity sha512-iisM+j99iKRuQFVfdWo0FiszDAl3r8Snq704oZH6C0RbDqvoVQStiptt6Y7kc6RX/5hSAqTqjhgvZ/di8cvaIA==
+
 statuses@2.0.1, statuses@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-2.0.1.tgz#55cb000ccf1d48728bd23c685a063998cf1a1b63"
