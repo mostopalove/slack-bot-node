@@ -1,7 +1,7 @@
 const {
   TOPIC_BLOCK_ID,
   TOPIC_ACTION_ID,
-} = require('../../constants/topic-selection');
+} = require('../../constants/topic-selection-constants');
 const { modals } = require('../../user-interface');
 
 const topicSubmit = async ({ ack, view, logger }) => {

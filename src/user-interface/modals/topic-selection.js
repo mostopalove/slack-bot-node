@@ -4,7 +4,7 @@ const {
   TOPIC_BLOCK_ID,
   TOPIC_ACTION_ID,
   TOPIC_OPTIONS,
-} = require('../../constants/topic-selection');
+} = require('../../constants/topic-selection-constants');
 
 const topicSelection = () => {
   return Modal({
