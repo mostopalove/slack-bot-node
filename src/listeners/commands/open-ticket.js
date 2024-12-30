@@ -1,4 +1,4 @@
-const {modals} = require("../../user-interface");
+const { modals } = require('../../user-interface');
 
 const openTicket = async ({ ack, body, client, logger }) => {
   // Acknowledge the command request
@@ -10,15 +10,14 @@ const openTicket = async ({ ack, body, client, logger }) => {
       // Pass a valid trigger_id within 3 seconds of receiving it
       trigger_id: body.trigger_id,
       // View payload
-      view: modals.mainModal()
+      view: modals.mainModal(),
     });
     logger.info(result);
-  }
-  catch (error) {
+  } catch (error) {
     logger.error(error);
   }
-}
+};
 
 module.exports = {
-  openTicket
+  openTicket,
 };

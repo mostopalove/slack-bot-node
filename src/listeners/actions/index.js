@@ -1,5 +1,5 @@
-const {updateModal} = require("./update-modal");
+const { updateModal } = require('./update-modal');
 
 module.exports.register = (app) => {
-  app.action('button_abc', updateModal)
-}
+  app.action('button_abc', updateModal);
+};

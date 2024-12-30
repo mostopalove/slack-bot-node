@@ -1,5 +1,5 @@
-const {greeting} = require("./greeting");
+const { greeting } = require('./greeting');
 
 module.exports.register = (app) => {
-  app.message('hello', greeting)
-}
+  app.message('hello', greeting);
+};
