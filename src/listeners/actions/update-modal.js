@@ -1,4 +1,4 @@
-const {modals} = require("../../user-interface");
+const { modals } = require('../../user-interface');
 
 const updateModal = async ({ ack, body, client, logger }) => {
   // Acknowledge the button request
@@ -15,15 +15,14 @@ const updateModal = async ({ ack, body, client, logger }) => {
       // Pass the current hash to avoid race conditions
       hash: body.view.hash,
       // View payload with updated blocks
-      view: modals.updatedModal()
+      view: modals.updatedModal(),
     });
     logger.info(result);
-  }
-  catch (error) {
+  } catch (error) {
     logger.error(error);
   }
-}
+};
 
 module.exports = {
-  updateModal
-}
+  updateModal,
+};

@@ -14,13 +14,11 @@ const modalSubmit = async ({ ack, body, view, client, logger }) => {
       channel: '#testing',
       text: `<@${user}>: *${val}*`,
     });
-  }
-  catch (error) {
+  } catch (error) {
     logger.error(error);
   }
-
-}
+};
 
 module.exports = {
-  modalSubmit
-}
+  modalSubmit,
+};

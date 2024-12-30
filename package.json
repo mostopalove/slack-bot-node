@@ -4,7 +4,8 @@
   "description": "Slack bot",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "code:format": "yarn prettier --write ."
   },
   "author": "Andrey Yakir",
   "license": "ISC",
@@ -17,5 +18,8 @@
     "@slack/bolt": "^4.2.0",
     "dotenv": "^16.4.7",
     "slack-block-builder": "^2.8.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2"
   }
 }
