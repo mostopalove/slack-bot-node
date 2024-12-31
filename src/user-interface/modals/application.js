@@ -13,7 +13,9 @@ const application = () => {
     callbackId: APP_CALLBACK_ID,
   })
     .blocks(
-      Blocks.Header({ text: 'Fill in all the form data' }),
+      Blocks.Header({
+        text: ':warning: Please make sure you are connected to Axis before submitting the form',
+      }),
       Blocks.Input({
         label: 'Environment',
       })

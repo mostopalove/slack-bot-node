@@ -1,29 +1,5 @@
-const { parseFormValues, wrap } = require('../../utils/form-utils');
-
-const createMessage = (rawValues, user) => {
-  const [
-    environment,
-    applicationName,
-    requestType,
-    description,
-    link,
-    screenshot,
-  ] = parseFormValues(rawValues);
-  const message = [
-    [wrap('User:', '*'), `<@${user}>`],
-    [wrap('Environment:', '*'), environment],
-    [wrap('Application:', '*'), applicationName],
-    [wrap('Request type:', '*'), requestType],
-    [wrap('Description:', '*'), wrap(description, '```')],
-    [wrap('Link:', '*'), link],
-    [wrap('Screenshots:', '*'), screenshot],
-  ]
-    .filter(([_, value]) => !!value)
-    .map((row) => row.join(' '))
-    .join('\n');
-
-  return message;
-};
+const { parseFormValues } = require('../../utils/form-utils');
+const messages = require('../../user-interface/messages');
 
 const applicationFormSubmit = async ({ ack, body, view, client, logger }) => {
   await ack();
@@ -31,12 +7,26 @@ const applicationFormSubmit = async ({ ack, body, view, client, logger }) => {
   try {
     const user = body['user']['username'];
     const formValues = view['state']['values'];
-    const message = createMessage(formValues, user);
+    const [
+      environment,
+      application,
+      requestType,
+      description,
+      link,
+      screenshots,
+    ] = parseFormValues(formValues);
 
-    await client.chat.postMessage({
+    const message = messages.application({
       channel: '#testing',
-      text: message,
+      user,
+      environment,
+      application,
+      requestType,
+      description,
+      link,
+      screenshots,
     });
+    await client.chat.postMessage(JSON.parse(message));
   } catch (e) {
     logger.error(e);
   }
