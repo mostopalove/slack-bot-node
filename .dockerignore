@@ -1,0 +1,10 @@
+.idea
+.github
+.gitignore
+.dockerignore
+.prettierignore
+.prettierrc
+README.md
+node_modules
+build
+dist
